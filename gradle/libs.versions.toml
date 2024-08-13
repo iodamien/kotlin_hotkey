@@ -1,0 +1,18 @@
+[versions]
+# Plugin versions
+
+jvm-target = "20"
+
+# Libraries
+koin = "3.6.0-wasm-alpha2"
+input-native = "2.2.2"
+coroutines = "1.8.1"
+
+[libraries]
+koin = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+inputnativehook = { module = "com.github.kwhat:jnativehook", version.ref = "input-native" }
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+[plugins]
+
+[bundles]
