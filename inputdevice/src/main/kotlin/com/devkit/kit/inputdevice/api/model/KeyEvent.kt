@@ -15,4 +15,10 @@ sealed class KeyEvent {
     ) : KeyEvent()
 
     abstract val key: NativeKey
+
+    val isPressed: Boolean
+        get() = this is Pressed
+
+    val isReleased: Boolean
+        get() = this is Released
 }

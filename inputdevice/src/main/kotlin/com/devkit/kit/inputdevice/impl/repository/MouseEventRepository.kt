@@ -26,8 +26,9 @@ internal class MouseEventRepository : ListenHotMouseEventImpl.MouseEventReposito
     private var previousButton: MouseButton = MouseButton.None
 
     init {
+        GlobalScreenUtil.tryRegisterNativeHook()
+
         GlobalScope.launch(Dispatchers.IO) {
-            GlobalScreenUtil.tryRegisterNativeHook()
             mutableStateFlow.subscriptionCount.collectLatest { count ->
                 if (count == 0) {
                     GlobalScreen.removeNativeMouseListener(this@MouseEventRepository)
